@@ -6,19 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/LinearLayout1"
+    <EditText
+        android:id="@+id/et_word"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical" >
-        <Button
-            android:id="@+id/notify_btn"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Toma Mango"
-            tools:ignore="MissingConstraints" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="@string/Word"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_reading"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/et_reading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="@string/Reading"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_meaning"
+        app:layout_constraintTop_toBottomOf="@+id/et_word" />
+
+    <EditText
+        android:id="@+id/et_meaning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="@string/Meaning"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_category"
+        app:layout_constraintTop_toBottomOf="@+id/et_reading" />
+
+    <EditText
+        android:id="@+id/et_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/Category"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_meaning" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Añadir palabra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_show"
+        app:layout_constraintTop_toBottomOf="@+id/et_category" />
+
+    <Button
+        android:id="@+id/btn_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Muestramela"
+        app:layout_constraintEnd_toStartOf="@+id/btn_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_add" />
+
+    <Button
+        android:id="@+id/notify_btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Toma Mango"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show"
+        tools:ignore="MissingConstraints" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
